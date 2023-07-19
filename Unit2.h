@@ -19,6 +19,7 @@ __published:	// IDE-managed Components
 private:	// User declarations
         int x = 1;
 	int y = -1;
+	int tMove = 1;
 public:		// User declarations
 	__fastcall TForm2(TComponent* Owner);
 };
