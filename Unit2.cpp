@@ -20,24 +20,28 @@ void __fastcall TForm2::Button1Click(TObject *Sender)
 }
 //---------------------------------------------------------------------------
 void __fastcall TForm2::Timer1Timer(TObject *Sender)
-{
-	if(Button1->Top == 0)
+{	
+	Button1->Left += (x*tMove);
+	Button1->Top += (y*tMove);
+	if(Timer1->Interval<10)
+	{
+		tMove = 10 - Timer1->Interval;
+	}
+	if(Button1->Top <= 0)
 	{
 		y = 1;
 	}
-	if(Button1->Left == 552)
+	if(Button1->Left >= ClientWidth-(Button1->Width))
 	{
 		x = -1;
 	}
-	if(Button1->Top == 416)
+	if(Button1->Top >= ClientHeight-(Button1->Height))
 	{
 		y = -1;
 	}
-	if(Button1->Left == 0)
+	if(Button1->Left <= 0)
 	{
 		x = 1;
-    }
-	Button1->Left += x;
-	Button1->Top += y;
+	}
 }
 //---------------------------------------------------------------------------
